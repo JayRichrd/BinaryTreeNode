@@ -7,13 +7,27 @@ public class Main {
 		int[] preOrder = new int[] { 1, 2, 4, 7, 3, 5, 6, 8 };
 		// 中序遍历
 		int[] inOrder = new int[] { 4, 7, 2, 1, 5, 3, 8, 6 };
+		
+		System.out.println("----------重建之前----------");
+		System.out.print("前序遍历序列:");
+		for (int i : preOrder) 
+			System.out.print(i + " ");
+		
+		System.out.println();
+		
+		System.out.print("中序遍历序列:");
+		for (int i : inOrder) 
+			System.out.print(i + " ");
+		System.out.println();
+		
+		System.out.println("----------重建之后----------");
 		// 重构二叉树
 		TreeNode root = construct(preOrder, inOrder);
 		// 打印二叉树检查重构的结构
-		System.out.print("前序遍历输出: ");
+		System.out.print("前序遍历输出:");
 		printPreOrder(root);
 		System.out.println();
-		System.out.print("中序遍历输出: ");
+		System.out.print("中序遍历输出:");
 		printInOrder(root);
 	}
 
