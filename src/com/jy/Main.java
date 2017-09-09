@@ -7,19 +7,19 @@ public class Main {
 		int[] preOrder = new int[] { 1, 2, 4, 7, 3, 5, 6, 8 };
 		// 中序遍历
 		int[] inOrder = new int[] { 4, 7, 2, 1, 5, 3, 8, 6 };
-		
+
 		System.out.println("----------重建之前----------");
 		System.out.print("前序遍历序列:");
-		for (int i : preOrder) 
+		for (int i : preOrder)
 			System.out.print(i + " ");
-		
+
 		System.out.println();
-		
+
 		System.out.print("中序遍历序列:");
-		for (int i : inOrder) 
+		for (int i : inOrder)
 			System.out.print(i + " ");
 		System.out.println();
-		
+
 		System.out.println("----------重建之后----------");
 		// 重构二叉树
 		TreeNode root = construct(preOrder, inOrder);
@@ -89,7 +89,7 @@ public class Main {
 
 		// 鲁棒性检查
 		// 当得到的根节点是中序遍历的最后一个节点时，是否等于前序遍历中得到的根节点的值
-		if (inOrder[indexOfRootInOrder] != rootValue)
+		if (indexOfRootInOrder > endInOrder)
 			throw new RuntimeException("Invalid Input!");
 
 		// 中序遍历中用根节点分段，左子树的长度
